@@ -315,7 +315,7 @@
             if(c == 'alerts')
                 return alert("Jarvis: A strange game. The only winning move is not to play. How about a nice game of chess?\n(You can't chat to the 'alerts' channel!)");
 
-            var msg = $.trim($('#chatinput input').val());
+            var msg = String($('#chatinput input').val() || '').trim();
             if(!msg || msg === '') return;
 
             if(c === 'debug') {
@@ -376,4 +376,4 @@
         window.plugin.fakeMsgLoc.ui.eventFocusChattext();
 	}
 
-// PLUGIN END //////////////////////////////////////////////////////////
+// PLUGIN END //////////////////////////////////////////////////////////

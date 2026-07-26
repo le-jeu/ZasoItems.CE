@@ -241,13 +241,13 @@
 			label: (label === undefined)? '' : label
 		};
 
-		if(level !== undefined && $.isNumeric(level) && level >= 0 && level <= 16){
+		if(level !== undefined && !isNaN(parseFloat(jolly)) && level >= 0 && level <= 16){
 			obj.level = Number(level);
 		}else{
 			obj.level = 0;
 		}
 
-		if(jolly !== undefined && $.isNumeric(jolly) && jolly > -1){
+		if(jolly !== undefined && !isNaN(parseFloat(jolly)) && jolly > -1){
 			obj.jolly = Number(jolly);
 		}
 
@@ -1246,4 +1246,4 @@
 		window.plugin.playerRanges.mpe.initMPE();
 	}
 
-// PLUGIN END //////////////////////////////////////////////////////////
+// PLUGIN END //////////////////////////////////////////////////////////
